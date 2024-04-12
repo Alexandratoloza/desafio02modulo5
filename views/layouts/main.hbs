@@ -7,11 +7,15 @@
 </head>
 <body>
     
-    navbar 
+    {{> navbar }}
+
     <main>
         {{{ body}}}
     </main>
 
-    footter
+    {{>footer 
+    text = "esto es 2.0"
+    year = 2024}}
 </body>
+
 </html>
