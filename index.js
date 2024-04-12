@@ -30,9 +30,9 @@ app.get('/services', (req, res) => {
 
 app.get('/services', (req, res) => {
 
-    const nameUrl = req.params.name
+    const nameURL= req.params.name
 
-    const service = services.find((item) => item.url === `/services/${nameUrl}`)
+    const service = services.find((item) => item.URL === `/services/${nameURL}`)
     return res.render('service', {service})
 })
 
