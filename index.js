@@ -11,5 +11,9 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
+app.get('/services', (req, res) => {
+    res.render('services');
+});
+
 app.listen(5001, () => console.log(`servidor encendido http://localhost:${5001}`))
 
