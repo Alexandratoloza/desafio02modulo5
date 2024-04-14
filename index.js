@@ -13,7 +13,7 @@ app.use(express.static('public'))
 
 app.use('/css', express.static('node_modules/bootstrap/dist/css'))
 app.use('/css', express.static('node_modules/bootstrap/dist/js'))
-app.use('/css', express.static('node_modules/jquery/dist/jquery.min.js'))
+app.use('/css', express.static('node_modules/jquery/dist/js'))
 
 //handlebars
 app.engine('.hbs', engine({extname: '.hbs'}));
