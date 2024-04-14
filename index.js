@@ -1,7 +1,7 @@
 import express from 'express'
 import { engine } from 'express-handlebars';
 
-import { services } from './data/service.data.js'
+import {services} from './data/service.data.js'
 
 const app = express();
 
@@ -28,13 +28,14 @@ app.get('/services', (req, res) => {
     res.render('services', {services: services});
 });
 
-app.get('/services', (req, res) => {
+app.get ('/services/:name' (req, res) =>{ 
 
-    const nameURL= req.params.name
+    console.log (req.params.name)
 
-    const service = services.find((item) => item.URL === `/services/${nameURL}`)
-    return res.render('service', {service})
-})
+    res.json({name: req.params.name})
+},)
+
+
 
 app.listen(5001, () => console.log(`servidor encendido http://localhost:${5001}`))
 
