@@ -21,6 +21,13 @@ app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist
 app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')))
 app.use('/js', express.static(path.join(__dirname, 'node_modules/jquery/dist')))
 
+
+//midellwarw body se habilita ocn este codigo :
+
+app.use(express.urlencoded({extended:true}))
+app.use(express.json())
+
+
 //handlebars
 app.engine('.hbs', engine({extname: '.hbs'}));
 app.set('view engine', '.hbs');

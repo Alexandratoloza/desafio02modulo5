@@ -24,7 +24,10 @@ if (order === 'desc'){
   });
   
 
-router.get ('/add', (req, res) => {
+router.post ('/add', (req, res) => {
+
+    console.log (req.body) /// con el req.body sale undefine 
+    //7ya q no recibe la informacion ya que esta deshabilitado, no funciona
 
     res.render('products', {products})
 })
