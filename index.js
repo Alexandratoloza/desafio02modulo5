@@ -1,9 +1,10 @@
 import express from 'express'
 import { engine } from 'express-handlebars';
-
-import {services} from './data/service.data.js'
 import path from 'path'
 
+/// importacion por defecto
+
+import serviceRoutes from './routes/service.route.js'
 const app = express();
 
 const __dirname = import.meta.dirname;
@@ -26,24 +27,13 @@ app.get('/', (req, res) => {
     res.render('home', {title: "Home Page 2.0"});
 });
 
-app.get('/services', (req, res) => {
-  return  res.render('services', {services: services});
-});
+app.use('/services', serviceRoutes)
 
-app.get ('/services/:name', (req, res) => { 
-
-   const nameURL = req.params.name
-
-   const service = services.find((item) => item.url === `/services/${nameURL}`)
-
-    if (!service){
-        return res.render('404', {title: "Pagina no encontrada"})
-    }
-   return res.render('service', {service})
-},)
+/// realizar una ruta con productos 
 
 
-// 
+
+// error 404
 app.get ('/', (req, res) => {
     return res.status(404).render('404', {title: "Pagina no encontrada"})
 
