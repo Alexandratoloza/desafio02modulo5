@@ -1,6 +1,9 @@
 import{ Router} from 'express'
 import { services } from '../data/service.data.js';
 
+///crear ruta services
+
+
 
 const router = Router ()
 
@@ -19,6 +22,8 @@ router.get('/services', (req, res) => {
       }
      return res.render('service', {service})
   },)
+
+
   
 
   export default router;
