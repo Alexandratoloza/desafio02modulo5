@@ -1,0 +1,26 @@
+<h1> Productos</h1>
+
+<div class="my-3">
+<a href="/products?order=asc" class="btn btn-dark "> Asc </a>
+<a href="/products?order=desc" class="btn btn-dark "> Desc </a>
+
+</div>
+
+<form action="/products/add" method="GET" class="mb-3">
+
+<input type="text" placeholder="Ingrese Nombre" name="name" class=" form-control my-2"> 
+<input type="number" placeholder="Ingrese numero"  name="name" class=" form-control my-2">
+<button class="btn btn-success" type="submit"> Agregar</button>
+
+</form>
+
+<ul>
+
+{{#each products}}
+<li>
+
+{{this.name}}
+
+</li>
+{{/each}}
+</ul>
