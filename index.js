@@ -5,6 +5,9 @@ import path from 'path'
 /// importacion por defecto
 
 import serviceRoutes from './routes/service.route.js'
+
+import productsRoutes from './routes/product.route.js'
+
 const app = express();
 
 const __dirname = import.meta.dirname;
@@ -29,6 +32,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/services', serviceRoutes)
+app.use('/products', productsRoutes)
 
 /// realizar una ruta con productos 
 
